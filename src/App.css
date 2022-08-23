@@ -1,38 +1,277 @@
-.App {
+:root {
+  --text-color: #331212;
+  --primary-color: #733703;
+  --light-color: #FFFFFF;
+}
+
+/***    General     ***/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif
+}
+
+body {
+  margin: 0 auto;
+
+}
+
+.wrapper-box {
+  background: #ffffff3b;
+  width: 80%;
+  border: solid 2px var(--light-color);
+  padding: 30px 40px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.m-5-auto {
+  margin: 5rem auto
+}
+
+.mt-2 {
+  margin-top: 2rem !important;
+}
+
+.primary-button {
+  margin-top: 5rem;
+  margin-right: 1rem;
+  padding: .6rem;
+  width: 10rem;
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all .5s;
+  cursor: pointer;
+  text-transform: capitalize
+}
+
+/* primary button */
+
+/* primary button */
+/***    Landing Page     ***/
+.main-title,
+.main-para {
+  color: #f1f1f1
+}
+
+.main-title {
+  font-size: 3rem;
+  font-family: 'Fascinate', cursive;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-shadow: 3px 2px 5px #a8590f;
+}
+
+.main-para {
+  font-size: 2.5rem;
+  text-Transform: capitalize
+}
+
+#reg_btn span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#reg_btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#reg_btn:hover span {
+  padding-right: 25px;
+}
+
+#reg_btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/***    Login Page     ***/
+h2 {
+  font-weight: 300
+}
+
+form {
+  display: inline-block;
+  background: #ffffffb8;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0 1rem 0;
+  width: 100%;
+}
+
+/* input style */
+.user-box {
+  position: relative;
+}
+
+.user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--text-color);
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+  outline: none;
+  background: transparent;
+}
+
+.user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--text-color);
+  font-weight: 500;
   pointer-events: none;
+  transition: .5s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user-box input:focus~label,
+.user-box input:valid~label {
+  top: -20px;
+  left: 0;
+  color: var(--primary-color);
+  font-size: 12px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* input style */
+
+#sub_btn {
+  display: block;
+  width: 100%;
+  padding: .3rem;
+  border: none;
+  background: #222;
+  color: #fff;
+  border-radius: 3px;
+}
+
+#sub_btn:hover {
+  background: #333;
+  transition: all .5s
+}
+
+footer p {
+  margin: 0;
+  font-size: .9rem
+}
+
+/***    Register Page     ***/
+.col-md-8.left-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.col-md-8.left-wrapper * {
+  color: var(--light-color);
+  font-weight: 500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.title {
+  font-size: 4rem;
+  font-family: 'Fascinate', cursive;
+  text-shadow: 3px 3px #2f2e2e;
+  font-weight: bold;
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  width: 450px;
+}
+
+.checkbox-text {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+#checkbox {
+  width: 1rem
+}
+
+form span {
+  font-size: .8rem
+}
+
+#reset_pass_lbl {
+  float: left
+}
+
+
+
+/***    Home Page     ***/
+.home-page-title {
+  color: #222
+}
+
+/* expand animation */
+
+.expand {
+  animation: expand 1.5s ease forwards;
+}
+
+.text-center{
+  color: var(--light-color) !important;
+}
+
+/* home */
+
+.card-title,.card-text{
+  color: var(--text-color);
+}
+
+.card{
+  width: 300px;
+}
+@keyframes expand {
+  0% {
+    transform: translateX(1400px);
   }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* typing animation */
+.typing-animation {
+  animation:
+    typing 5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
   to {
-    transform: rotate(360deg);
+    width: 450px
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent
+  }
+
+  20% {
+    border-color: orange
   }
 }
